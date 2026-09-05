@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: flask-deployment
+  namespace: flask-redis
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: flask
+
+  template:
+    metadata:
+      labels:
+        app: flask
+
+    spec:
+      containers:
+        - name: flask
+          image: 10messiaws/flask-k8s-app:1.0
+          ports:
+            - containerPort: 5000
+
+          env:
+            - name: REDIS_HOST
+              value: redis-service
