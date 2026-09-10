@@ -12,6 +12,8 @@ This project demonstrates how Jenkins can automate the application build and Doc
 
 ## 🏗️ Architecture
 
+![Jenkins Project 1 Architecture Diagram](architecture-diagram.png.png)
+
 Developer
     |
     v
